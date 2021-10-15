@@ -1,0 +1,201 @@
+@font-face {
+	font-family: MontserratRegular;
+	src: url("./assets/fonts/Montserrat/Montserrat-Regular.ttf");
+	font-display: swap;
+}
+
+@font-face {
+	font-family: MontserratBold;
+	src: url("./assets/fonts/Montserrat/Montserrat-Bold.ttf");
+	font-display: swap;
+}
+
+@font-face {
+	font-family: MontserratSemiBold;
+	src: url("./assets/fonts/Montserrat/Montserrat-SemiBold.ttf");
+	font-display: swap;
+}
+
+:root {
+	--blue: #007bba;
+	--blue-alternate: #0077ff;
+	--blue-off: #2e8fff;
+	--black: #333333;
+	--black-alternate: #404040;
+	--white: white;
+	--dimgray: dimgray;
+	--white-alternate: #fffffe;
+	--white-off: #ebebeb;
+
+	--primary: var(--blue);
+	--secondary: var(--black);
+	--highlight: var(--blue-alternate);
+	--background-color: var(--white-alternate);
+	--cup-sign: var(--white);
+}
+
+* {
+	box-sizing: border-box;
+	outline: none;
+	font-family: MontserratRegular;
+}
+
+body {
+	margin: 0;
+	font-family: MontserratRegular, sans-serif;
+	background-color: var(--background-color);
+}
+
+.main-heading {
+	font-family: MontserratBold, sans-serif;
+	// color: #0077ff;
+	color: var(--secondary);
+}
+
+.sec {
+	padding: 1rem;
+	.sec-headers {
+		font-family: MontserratBold, sans-serif;
+		color: var(--primary);
+	}
+}
+
+.highlight-text {
+	font-family: MontserratBold, sans-serif;
+	color: var(--highlight);
+}
+
+.description {
+	color: var(--secondary);
+}
+
+.secondary-fill {
+	fill: var(--secondary);
+}
+
+.highlight-fill {
+	fill: var(--highlight);
+}
+
+.grey-fill {
+	fill: var(--cup-sign);
+}
+
+.projects {
+	.projects-container {
+		display: flex;
+		flex-wrap: wrap;
+		width: 100%;
+		gap: 1rem;
+		justify-content: flex-start;
+	}
+	.project {
+		border: 0.01rem solid var(--black);
+		display: flex;
+		flex-wrap: wrap;
+		flex-grow: 1;
+		border-radius: 0.2rem;
+		.circular-div {
+			padding: 1rem;
+			border: 0.01rem solid var(--white);
+			border-radius: 50%;
+		}
+		.tech-stack {
+			padding: 0.4rem;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			width: 100%;
+			gap: 1rem;
+			background-color: var(--dimgray);
+			order: 2;
+		}
+		.content {
+			padding: 0.4rem;
+			width: 100%;
+			order: 3;
+		}
+		.project-image {
+			padding: 4rem;
+			width: 100%;
+			order: 1;
+			background-color: cadetblue;
+		}
+	}
+}
+
+@media only screen and (min-width: 420px) and (max-width: 559px) {
+	.sec {
+		padding: 1rem 4rem;
+	}
+}
+
+@media only screen and (min-width: 560px) {
+	.project {
+		.tech-stack {
+			order: 1 !important;
+			width: 20% !important;
+			justify-content: flex-start !important;
+			clip-path: polygon(0% 0, 100% 0%, 100% 75%, 0% 145%);
+		}
+		.content {
+			order: 2 !important;
+			width: 45% !important;
+		}
+		.project-image {
+			order: 3 !important;
+			width: 35% !important;
+		}
+	}
+
+	.introduction {
+		display: grid;
+		grid-template-rows: 1fr 1fr;
+		grid-template-columns: 1fr 1fr;
+		grid-auto-flow: column;
+	}
+
+	.main-heading {
+		align-self: center;
+	}
+
+	.intro-image {
+		grid-row: 1 / span 2;
+		width: 90%;
+		margin: auto;
+	}
+}
+
+@media only screen and (min-width: 1005px) {
+	.sec {
+		padding: 2rem 3rem;
+	}
+	.projects-container {
+		justify-content: space-between !important;
+		gap: 2.5rem !important;
+	}
+	.project {
+		width: 47%;
+		flex-grow: initial !important;
+	}
+}
+
+@media (prefers-color-scheme: light) {
+	:root {
+		--primary: var(--blue);
+		--secondary: var(--black);
+		--highlight: var(--blue-alternate);
+		--background-color: var(--white-alternate);
+		--cup-sign: var(--white);
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--primary: var(--white-off);
+		--secondary: var(--white-alternate);
+		--highlight: var(--blue-off);
+		--background-color: var(--black-alternate);
+		--cup-sign: var(--dimgray);
+	}
+}
