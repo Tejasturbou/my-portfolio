@@ -111,9 +111,9 @@ body {
 			order: 2;
 		}
 		.content {
-			padding: 0.4rem;
+			padding: 0.8rem;
 			width: 100%;
-			order: 3;
+			font-size: 1rem;
 		}
 		.project-image {
 			padding: 4rem;
@@ -135,8 +135,6 @@ body {
 		.tech-stack {
 			order: 1 !important;
 			width: 20% !important;
-			justify-content: flex-start !important;
-			clip-path: polygon(0% 0, 100% 0%, 100% 75%, 0% 145%);
 		}
 		.content {
 			order: 2 !important;
