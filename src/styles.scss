@@ -99,6 +99,7 @@ body {
 }
 
 .sec {
+	margin: 4.5rem 0;
 	.sec-headers {
 		font-family: MontserratBold, sans-serif;
 		color: var(--primary);
@@ -136,6 +137,36 @@ body {
 
 	.skill-name {
 		color: var(--secondary);
+	}
+}
+
+.overlay {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	backdrop-filter: blur(2rem);
+	padding: 3rem;
+	box-sizing: border-box;
+	text-align: center;
+}
+
+.overlay-image {
+	width: auto;
+	height: 100%;
+}
+
+@media only screen and (max-width: 720px) {
+	.overlay {
+		padding: 0.2rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.overlay-image {
+		width: 100%;
+		height: auto;
 	}
 }
 
