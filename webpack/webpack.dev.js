@@ -23,7 +23,10 @@ module.exports = {
 		new HtmlWebpackPlugin({ template: "./src/index.html" }),
 		new MiniCssExtractPlugin(),
 		new CopyWebpackPlugin({
-			patterns: [{ from: "src/assets", to: "assets" }],
+			patterns: [
+				{ from: "src/assets", to: "assets" },
+				{ from: "src/styles", to: "styles" },
+			],
 		}),
 	],
 	module: {
