@@ -40,33 +40,50 @@
 	font-family: MontserratRegular;
 }
 
+html {
+	font-size: calc(14px + (25 - 14) * ((100vw - 300px) / (2600 - 300)));
+}
+
+.w-100 {
+	width: 100%;
+}
+
 body {
 	margin: 0;
 	font-family: MontserratRegular, sans-serif;
 	background-color: var(--background-color);
+	padding: 0 1rem;
 }
 
-.main-heading {
-	font-family: MontserratBold, sans-serif;
-	// color: #0077ff;
-	color: var(--secondary);
-}
+.introduction {
+	display: grid;
+	grid-template-columns: 1fr;
 
-.sec {
-	padding: 1rem;
-	.sec-headers {
+	.main-heading {
 		font-family: MontserratBold, sans-serif;
-		color: var(--primary);
+		color: var(--secondary);
+		order: 0;
 	}
-}
 
-.highlight-text {
-	font-family: MontserratBold, sans-serif;
-	color: var(--highlight);
-}
+	.highlight-text {
+		font-family: MontserratBold, sans-serif;
+		color: var(--highlight);
+	}
 
-.description {
-	color: var(--secondary);
+	.description {
+		color: var(--secondary);
+		align-self: center;
+		order: 1;
+	}
+
+	.intro-image {
+		svg {
+			width: 100%;
+			height: 100%;
+		}
+		padding: 2rem;
+		order: 0;
+	}
 }
 
 .secondary-fill {
@@ -81,6 +98,13 @@ body {
 	fill: var(--cup-sign);
 }
 
+.sec {
+	.sec-headers {
+		font-family: MontserratBold, sans-serif;
+		color: var(--primary);
+	}
+}
+
 .projects {
 	.projects-container {
 		display: flex;
@@ -89,68 +113,41 @@ body {
 		gap: 1rem;
 		justify-content: flex-start;
 	}
-	.project {
-		border: 0.01rem solid var(--black);
+}
+
+.skill-logos {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 2rem;
+	.skill {
+		text-align: center;
 		display: flex;
+		justify-content: center;
+		align-items: center;
 		flex-wrap: wrap;
-		flex-grow: 1;
-		border-radius: 0.2rem;
-		.circular-div {
-			padding: 1rem;
-			border: 0.01rem solid var(--white);
-			border-radius: 50%;
+	}
+
+	my-svg {
+		svg {
+			width: 5rem;
+			height: 5rem;
 		}
-		.tech-stack {
-			padding: 0.4rem;
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: center;
-			width: 100%;
-			gap: 1rem;
-			background-color: var(--dimgray);
-			order: 2;
-		}
-		.content {
-			padding: 0.8rem;
-			width: 100%;
-			font-size: 1rem;
-		}
-		.project-image {
-			padding: 4rem;
-			width: 100%;
-			order: 1;
-			background-color: cadetblue;
-		}
+	}
+
+	.skill-name {
+		color: var(--secondary);
 	}
 }
 
-@media only screen and (min-width: 420px) and (max-width: 559px) {
-	.sec {
-		padding: 1rem 4rem;
-	}
-}
-
-@media only screen and (min-width: 560px) {
-	.project {
-		.tech-stack {
-			order: 1 !important;
-			width: 20% !important;
-		}
-		.content {
-			order: 2 !important;
-			width: 45% !important;
-		}
-		.project-image {
-			order: 3 !important;
-			width: 35% !important;
-		}
-	}
-
+@media only screen and (min-width: 600px) {
 	.introduction {
-		display: grid;
+		grid-auto-flow: column;
 		grid-template-rows: 1fr 1fr;
 		grid-template-columns: 1fr 1fr;
-		grid-auto-flow: column;
+	}
+
+	#paragraph-description {
+		order: 0;
 	}
 
 	.main-heading {
@@ -159,22 +156,34 @@ body {
 
 	.intro-image {
 		grid-row: 1 / span 2;
-		width: 90%;
-		margin: auto;
+		svg {
+			width: 90%;
+			margin: auto;
+		}
+	}
+
+	.skill-logos {
+		grid-template-columns: 1fr 1fr 1fr 1fr;
 	}
 }
 
 @media only screen and (min-width: 1005px) {
-	.sec {
-		padding: 2rem 3rem;
-	}
 	.projects-container {
 		justify-content: space-between !important;
 		gap: 2.5rem !important;
 	}
-	.project {
-		width: 47%;
-		flex-grow: initial !important;
+	body {
+		padding: 2rem 3rem;
+	}
+
+	.skill-logos {
+		grid-template-columns: repeat(6, 1fr);
+	}
+}
+
+@media only screen and (min-width: 1440px) {
+	body {
+		padding: 0 9%;
 	}
 }
 
