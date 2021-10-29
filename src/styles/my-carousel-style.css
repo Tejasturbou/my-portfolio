@@ -21,14 +21,15 @@
 	justify-content: center;
 	align-items: center;
 	width: 0;
-	height: 22rem;
+	height: 30rem;
+	cursor: pointer;
 	transform: scale(0.9);
 }
 
 .slide.active {
 	opacity: 1;
 	transition: opacity 1s, transform 0.4s;
-	width: 22rem;
+	width: 34rem;
 	transform: scale(1);
 }
 
@@ -68,7 +69,7 @@
 	.slides {
 		width: 60%;
 	}
-	.slide-image {
-		height: 50%;
+	.slide {
+		height: 50vw;
 	}
 }

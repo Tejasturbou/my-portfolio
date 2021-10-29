@@ -33,8 +33,8 @@ class MyCarousel extends HTMLElement {
 
 	createStylesheet() {
 		const linkElem = document.createElement("link");
-		linkElem.setAttribute("rel", "stylesheet");
 		linkElem.setAttribute("href", "/styles/my-carousel-style.css");
+		linkElem.setAttribute("rel", "stylesheet");
 		return linkElem;
 	}
 
@@ -65,8 +65,35 @@ class MyCarousel extends HTMLElement {
 			[...elem.classList].includes("slide")
 		);
 
+		this.slidesArray.forEach((slide) => {
+			slide.addEventListener("click", this.openOverlay);
+		});
+
 		this.rightChevronElem.onclick = this.next;
 		this.leftChevronElem.onclick = this.prev;
+	}
+
+	openOverlay(event) {
+		console.log("inside openOverlay");
+		const overlay = document.createElement("div");
+		overlay.classList.add("overlay");
+		overlay.addEventListener("click", () =>
+			document.querySelector(".overlay").remove()
+		);
+		console.dir(this);
+		const lastIndex = this.children[0].currentSrc.lastIndexOf(this.baseURI);
+		const imageElement = document.createElement("img");
+		imageElement.setAttribute(
+			"src",
+			this.children[0].currentSrc.slice(lastIndex)
+		);
+		imageElement.setAttribute("alt", "appreciation image");
+		imageElement.classList.add("overlay-image");
+		imageElement.onclick = function (event) {
+			event.stopPropagation();
+		};
+		overlay.appendChild(imageElement);
+		document.body.append(overlay);
 	}
 
 	prev = () => {
