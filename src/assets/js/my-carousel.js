@@ -129,4 +129,6 @@ class MyCarousel extends HTMLElement {
 	}
 }
 
-customElements.define("my-carousel", MyCarousel);
+if (!customElements.get("my-carousel")) {
+	customElements.define("my-carousel", MyCarousel);
+}

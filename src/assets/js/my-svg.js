@@ -22,4 +22,6 @@ class MySVG extends HTMLElement {
 	}
 }
 
-customElements.define("my-svg", MySVG);
+if (!customElements.get("my-svg")) {
+	customElements.define("my-svg", MySVG);
+}

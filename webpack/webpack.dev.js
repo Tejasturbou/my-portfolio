@@ -1,16 +1,9 @@
+const { merge } = require("webpack-merge");
 const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const CopyWebpackPlugin = require("copy-webpack-plugin");
+const common = require("./webpack.common.js");
 
-module.exports = {
+module.exports = merge(common, {
 	mode: "development",
-	entry: "./src/index.js",
-	output: {
-		filename: "[name].js",
-		path: path.resolve(__dirname, "../dist"),
-		clean: true,
-	},
 	devServer: {
 		contentBase: path.join(__dirname, "../dist"),
 		compress: true,
@@ -19,37 +12,5 @@ module.exports = {
 		inline: true,
 		hot: false,
 	},
-	plugins: [
-		new HtmlWebpackPlugin({ template: "./src/index.html" }),
-		new MiniCssExtractPlugin(),
-		new CopyWebpackPlugin({
-			patterns: [
-				{ from: "src/assets", to: "assets" },
-				{ from: "src/styles", to: "styles" },
-			],
-		}),
-	],
-	module: {
-		rules: [
-			{
-				test: /\.(sc|c)ss$/,
-				use: [
-					{ loader: MiniCssExtractPlugin.loader },
-					{
-						loader: "css-loader",
-					},
-					{ loader: "sass-loader" },
-				],
-			},
-			{
-				test: /\.(png|svg|jpg|jpeg|gif)$/i,
-				type: "asset/resource",
-			},
-			{
-				test: /\.(woff|woff2|eot|ttf|otf)$/i,
-				type: "asset/resource",
-			},
-		],
-	},
 	devtool: "inline-source-map",
-};
+});
