@@ -1,4 +1,5 @@
 import "./styles.scss";
+import "./styles/timeline.scss";
 
 const carouselElem = document.getElementById("certificates-carousel");
 carouselElem.setAttribute("images", [
