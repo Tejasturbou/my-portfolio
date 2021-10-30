@@ -33,7 +33,7 @@ class MyCarousel extends HTMLElement {
 
 	createStylesheet() {
 		const linkElem = document.createElement("link");
-		linkElem.setAttribute("href", "/styles/my-carousel-style.css");
+		linkElem.setAttribute("href", "styles/my-carousel-style.css");
 		linkElem.setAttribute("rel", "stylesheet");
 		return linkElem;
 	}
