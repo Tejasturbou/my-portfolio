@@ -1,7 +1,7 @@
 name: Deploy Portfolio
 on:
   push:
-    branches: [deploy]
+    branches: [main]
   pull_request:
     branches: [main]
 jobs:
