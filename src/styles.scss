@@ -71,6 +71,8 @@ body {
 	}
 
 	.description {
+		font-family: MontserratSemiBold, sans-serif;
+		text-align: justify;
 		color: var(--secondary);
 		align-self: center;
 		order: 1;
@@ -263,7 +265,7 @@ footer {
 	}
 
 	.skill-logos {
-		grid-template-columns: repeat(6, 1fr);
+		grid-template-columns: repeat(5, 1fr);
 		margin: 0 2rem;
 	}
 }
