@@ -61,6 +61,3 @@ function openSocial() {
 
 populateCarousel();
 populateSocials();
-
-const resumeElement = document.getElementById("resume-btn");
-resumeElement.addEventListener("click", openSocial);
