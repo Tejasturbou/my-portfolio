@@ -141,7 +141,7 @@ body {
 .skill-logos {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
-	gap: 2rem;
+	gap: 3rem 2rem;
 	.skill {
 		text-align: center;
 		display: flex;
@@ -265,7 +265,7 @@ footer {
 
 	.skill-logos {
 		grid-template-columns: repeat(5, 1fr);
-		margin: 0 2rem;
+		margin: 2rem;
 	}
 }
 
