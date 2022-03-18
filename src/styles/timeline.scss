@@ -34,6 +34,10 @@
 	z-index: 1;
 }
 
+.container:nth-child(1)::after {
+	border-color: var(--clevertap-color);
+}
+
 .left {
 	left: 0;
 }
@@ -57,7 +61,6 @@
 	.company {
 		margin: 0;
 		font-family: MontserratBold, sans-serif;
-		// color: #2e8fff;
 		color: #007cc3;
 	}
 	.designation {

@@ -26,6 +26,7 @@
 	--dimgray: dimgray;
 	--white-alternate: #fffffe;
 	--white-off: #ebebeb;
+	--clevertap-color: #dc2626;
 
 	--primary: var(--blue);
 	--secondary: var(--black);
@@ -211,6 +212,10 @@ footer {
 
 #copyright {
 	color: var(--secondary);
+}
+
+#clevertap {
+	color: var(--clevertap-color);
 }
 
 @media only screen and (max-width: 720px) {
