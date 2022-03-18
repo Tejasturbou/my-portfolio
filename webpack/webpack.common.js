@@ -7,6 +7,7 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 module.exports = {
 	entry: {
+		polyfills: "./src/polyfills.js",
 		index: "./src/index.js",
 		"my-carousel": "./src/assets/js/my-carousel.js",
 		"my-svg": "./src/assets/js/my-svg.js",
@@ -38,6 +39,7 @@ module.exports = {
 					{
 						loader: "css-loader",
 					},
+					{ loader: "postcss-loader" },
 					{ loader: "sass-loader" },
 				],
 			},
@@ -55,7 +57,16 @@ module.exports = {
 				use: {
 					loader: "babel-loader",
 					options: {
-						presets: ["@babel/preset-env"],
+						presets: [
+							[
+								"@babel/preset-env",
+								{
+									debug: true,
+									useBuiltIns: "usage",
+									corejs: { version: "3.8", proposals: true },
+								},
+							],
+						],
 					},
 				},
 			},

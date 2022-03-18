@@ -74,13 +74,11 @@ class MyCarousel extends HTMLElement {
 	}
 
 	openOverlay(event) {
-		console.log("inside openOverlay");
 		const overlay = document.createElement("div");
 		overlay.classList.add("overlay");
 		overlay.addEventListener("click", () =>
 			document.querySelector(".overlay").remove()
 		);
-		console.dir(this);
 		const lastIndex = this.children[0].currentSrc.lastIndexOf(this.baseURI);
 		const imageElement = document.createElement("img");
 		imageElement.setAttribute(
