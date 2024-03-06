@@ -34,7 +34,7 @@
 	z-index: 1;
 }
 
-.container:nth-child(1)::after {
+.container:nth-child(-n + 2)::after {
 	border-color: var(--clevertap-color);
 }
 
