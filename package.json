@@ -1,4 +1,5 @@
 {
+	"homepage": "https://tejasturbou.github.io/my-portfolio/",
 	"name": "portfolio",
 	"version": "1.0.0",
 	"description": "A Portfolio to demonstrate my skills in Web Technologies.",
@@ -6,7 +7,9 @@
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"start": "webpack serve --open --config webpack/webpack.dev.js",
-		"build": "webpack --config webpack/webpack.prod.js"
+		"build": "webpack --config webpack/webpack.prod.js",
+		"predeploy": "npm run build",
+		"deploy": "gh-pages -d dist"
 	},
 	"author": "",
 	"license": "ISC",
@@ -17,6 +20,7 @@
 		"copy-webpack-plugin": "^8.1.1",
 		"css-loader": "^5.2.4",
 		"css-minimizer-webpack-plugin": "^3.1.1",
+		"gh-pages": "^6.1.1",
 		"google-closure-compiler": "^20211006.0.0",
 		"html-webpack-plugin": "^5.3.1",
 		"mini-css-extract-plugin": "^1.6.0",
